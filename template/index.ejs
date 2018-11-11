@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="Peaceful piano music generator">
+    <meta name="theme-color" content="#ffffff">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <h1><%= htmlWebpackPlugin.options.title %></h1>
+    <div id="app"></div>
+    <% for (var css in htmlWebpackPlugin.files.css) { %><link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet"><% } %>
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %><script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script><% } %>
+    <footer>
+      Code at <a href="https://github.com/apvilkko/peaceful-piano-generator">github</a>.<br>
+    </footer>
+  </body>
+</html>
