@@ -62,3 +62,5 @@ typings/
 
 dist/
 public/bg
+public/checkpoints/*/group*
+public/checkpoints/*/weights*

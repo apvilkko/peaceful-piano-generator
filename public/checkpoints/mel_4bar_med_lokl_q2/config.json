@@ -1,0 +1,11 @@
+{
+  "type": "MusicVAE",
+  "dataConverter": {
+    "type": "MelodyConverter",
+    "args": {
+      "numSteps": 64,
+      "minPitch": 48,
+      "maxPitch": 96
+    }
+  }
+}
