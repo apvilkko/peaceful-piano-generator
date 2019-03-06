@@ -1,3 +1,4 @@
+import start from './generator';
 import './style.scss';
 
 const bgPath = 'bg/';
@@ -39,6 +40,7 @@ const cycleImages = imageList => {
 };
 
 setup();
+start();
 cycleImages([
   'boat-1992137_1920.jpg',
   'flowers-1167669_1920.jpg',
