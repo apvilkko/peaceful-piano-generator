@@ -1,7 +1,7 @@
 import all from './tracks';
 import compressor from './audio-components/compressor';
 import reverb from './audio-components/reverb';
-import createSynth from './audio-components/retrosynth';
+import createSampler from './audio-components/sampler';
 
 const create = () => {
   const ctx = new (window.AudioContext || window.webkitAudioContext);
@@ -21,16 +21,18 @@ const create = () => {
   all.forEach(instrument => {
     const gain = ctx.createGain();
     gain.connect(masterGain);
-    gain.gain.value = 0.1;
+    gain.gain.value = 0.7;
     tracks[instrument] = {
       gain,
     };
-    instruments[instrument] = createSynth(ctx);
+    /* instruments[instrument] = createSynth(ctx);
     instruments[instrument].output.connect(gain);
     instruments[instrument].setParam('aEnvRelease', instrument === 'BASS' ? 4 : 1);
     instruments[instrument].setParam('detune0', -5);
     instruments[instrument].setParam('oscType0', 'triangle');
-    instruments[instrument].setParam('detune1', 5);
+    instruments[instrument].setParam('detune1', 5); */
+    instruments[instrument] = createSampler(ctx);
+    instruments[instrument].output.connect(gain);
   });
 
   return {

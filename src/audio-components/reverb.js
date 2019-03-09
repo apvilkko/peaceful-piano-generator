@@ -1,6 +1,6 @@
 import loadBuffer from './loadBuffer';
 
-const create = (ctx, {impulse, dry = 0.15, wet = 0.05}) => {
+const create = (ctx, {impulse, dry = 0.8, wet = 0.5}) => {
   const reverb = ctx.createConvolver();
   const output = ctx.createGain();
   const input = ctx.createGain();

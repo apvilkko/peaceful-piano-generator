@@ -1,9 +1,13 @@
 import start from './generator';
+import {shuffle} from './rand';
+import createMixer from './mixer';
+import createSequencer from './sequencer';
+import loop from './loop';
 import './style.scss';
 
 const bgPath = 'bg/';
 const bgDuration = 10000;
-const context = {};
+const context = {scene: {}};
 
 const createDiv = className => {
   const el = document.createElement('div');
@@ -20,6 +24,10 @@ const setup = () => {
   context.bg1 = bg1;
   context.bg2 = bg2;
   document.getElementById('app').appendChild(bgContainer);
+
+  context.mixer = createMixer();
+  context.sequencer = createSequencer();
+  loop(context);
 };
 
 const cycleImages = imageList => {
@@ -40,8 +48,8 @@ const cycleImages = imageList => {
 };
 
 setup();
-start();
-cycleImages([
+start(context);
+cycleImages(shuffle([
   'boat-1992137_1920.jpg',
   'flowers-1167669_1920.jpg',
   'sky-34536_1280.png',
@@ -53,4 +61,4 @@ cycleImages([
   'sky-1246033_1920.jpg',
   'sunset-3102754_1920.jpg',
   'water-1761027_1920.jpg',
-].map(x => `${bgPath}${x}`));
+]).map(x => `${bgPath}${x}`));

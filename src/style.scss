@@ -17,3 +17,24 @@
   background-size: cover;
   transition: 3s linear opacity;
 }
+
+body {
+  padding: 1rem;
+  font-family: 'Norican', cursive;
+  font-size: 18pt;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(100, 100, 100, 0.76);
+}
+
+button {
+  padding: 1rem;
+  margin: 1rem;
+  font-family: 'Norican', cursive;
+  font-size: 1rem;
+  background: rgba(0,0,0,0.2);
+  color: white;
+}
+
+a {
+  color: papayawhip;
+}

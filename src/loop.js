@@ -20,7 +20,10 @@ const scheduleNote = (context, when) => {
     let notes;
     if (i === 'BASS') {
       const bassNote = scene.themes[currentTheme].key + MIDI_C1 + 24;
-      notes = [{pitch: bassNote, quantizedStartStep: 0, quantizedEndStep: 16}];
+      notes = [
+        {pitch: bassNote, quantizedStartStep: 0, quantizedEndStep: 30},
+        {pitch: bassNote + 7, quantizedStartStep: 32, quantizedEndStep: 60}
+      ];
     } else if (i === 'MELODY') {
       notes = scene.themes[currentTheme].notes;
     }
