@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && NODE_ENV=production webpack -p",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack -p",
     "start": "webpack-dev-server --https"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.1.5",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "file-loader": "^2.0.0",

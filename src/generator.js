@@ -3,7 +3,9 @@ import {play, pause} from './sequencer';
 import {MIDI_C1} from './constants';
 
 // const checkpoint = 'https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/mel_4bar_med_lokl_q2';
-const checkpoint = '/checkpoints/mel_4bar_med_lokl_q2';
+const publicPath = process.env.NODE_ENV === 'production' ?
+  '/peaceful-piano-generator/' : '/';
+const checkpoint = publicPath + 'checkpoints/mel_4bar_med_lokl_q2';
 const model = new mm.MusicVAE(checkpoint);
 // const player = new mm.Player();
 
